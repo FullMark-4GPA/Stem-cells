@@ -656,7 +656,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 .mn-big{font-family:Georgia,'Times New Roman',serif;font-size:1.35rem;font-weight:800;color:var(--amber);letter-spacing:2px;margin-bottom:2px}
 .ar-note{direction:rtl;text-align:right;font-size:.8rem;color:var(--amber);margin-top:6px;line-height:1.85;unicode-bidi:isolate}
 /* larger labels for the wide diagram so it stays readable on phones */
-.dia.big .sv-t{font-size:21px}.dia.big .sv-d{font-size:18px}.dia.big .sv-h{font-size:20px}
+.dia.big .sv-t{font-size:26px}.dia.big .sv-d{font-size:22px}.dia.big .sv-h{font-size:24px}
 @media(max-width:520px){.tree{grid-template-columns:1fr}}
 @media print{
   .sv-t,.sv-d{fill:#1a1a1a !important}.sv-h{fill:#0f766e !important}.sv-line{stroke:#555 !important}
@@ -675,6 +675,27 @@ details[open]>summary::before{transform:rotate(90deg)}
   .mn-big{color:#8a5400 !important}
   .ar-note{color:#8a5400 !important}
 }
+
+/* ===== LECTURE 2 ADDITIONS ===== */
+.ladder{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.lbar{border-radius:12px;padding:10px 14px;color:#06201c;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.lbar b{display:block;font-size:1rem;font-weight:800}
+.lbar span{display:block;font-size:.8rem;font-weight:600;line-height:1.5}
+.lbar.l1{width:100%;background:var(--emerald)}
+.lbar.l2{width:86%;background:var(--teal)}
+.lbar.l3{width:72%;background:var(--sky)}
+.lbar.l4{width:58%;background:var(--violet)}
+.lbar.l5{width:44%;background:var(--amber)}
+@media(max-width:520px){.lbar.l5{width:62%}.lbar.l4{width:72%}.lbar.l3{width:82%}.lbar.l2{width:92%}}
+.tree3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+@media(max-width:520px){.tree3{grid-template-columns:1fr}}
+.roots{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.root-chip{flex:1 1 90px;text-align:center;background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:10px 6px}
+.root-chip b{display:block;color:var(--teal-2);font-size:.95rem}
+.root-chip span{font-size:.85rem;color:var(--ink)}
+@media print{.root-chip{background:none !important;border-color:#bbb !important}.root-chip b{color:#0f766e !important}.root-chip span{color:#1a1a1a !important}.lbar{color:#06201c !important}}
+
+.ar-tr{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -705,7 +726,7 @@ details[open]>summary::before{transform:rotate(90deg)}
   <div class="hero-tag"><bdi>منصة التفوق الأكاديمي</bdi><i class="dot"></i><b dir="ltr">4.0 GPA</b></div>
   <div class="hero-rule"></div>
   <div class="hero-course">Stem Cells &amp; Tissue Engineering · Lecture 1<small>Introduction to Tissue Engineering &amp; Stem Cells · Faculty of Dentistry</small></div>
-  <div class="trust"><span>📖 Full Explanation</span><span>⭐ Key Terms</span><span>🧠 Memory Lab</span><span>❓ 25 MCQs</span></div>
+  <div class="trust"><span>📖 Full Explanation</span><span>⭐ Key Points</span><span>🧠 Memory Lab</span><span>❓ 25 MCQs</span></div>
 </header>
 
 <div class="lecture-tab-bar">
@@ -718,7 +739,7 @@ details[open]>summary::before{transform:rotate(90deg)}
 
 <div class="nav">
   <button class="lsn-btn active" onclick="showView('content','lec1',this)">📖 Explanation</button>
-  <button class="lsn-btn" onclick="showView('keypoints','lec1',this)">⭐ Key Terms</button>
+  <button class="lsn-btn" onclick="showView('keypoints','lec1',this)">⭐ Key Points</button>
   <button class="lsn-btn" onclick="showView('memory','lec1',this)">🧠 Memory Lab</button>
   <button class="lsn-btn" onclick="showView('quiz','lec1',this)">❓ Quiz (25)</button>
 </div>
@@ -738,249 +759,55 @@ details[open]>summary::before{transform:rotate(90deg)}
 
 <!-- ============ 1) EXPLANATION ============ -->
 <div class="lec-view" id="view-content-lec1">
-<div class="glossary-section" style="margin:18px 0 8px"><h3>📗 Part 1 — Introduction to tissue engineering</h3></div>
+<div class="hl sky sec-intro-content" style="direction:rtl;text-align:right;margin-top:0"><b>📖 القسم ده بيتناول إيه؟</b> شرح المحاضرة في 6 نقاط مرتبة. ابدأ بيه.</div>
 
-<div class="card">
-  <div class="ctitle">📘 Definition</div>
-  <div class="table-wrap"><table class="tbl"><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody>
-    <tr><td>Tissue engineering <span class="ar-tr" dir="rtl">(هندسة الأنسجة)</span></td><td>An <strong>emerging field</strong> that applies the principles of <strong>biology and engineering</strong> to develop <strong>viable substitutes</strong> that <strong>restore, maintain or improve</strong> the function of human tissues or a whole organ.</td></tr>
-    <tr><td>Ex vivo <span class="ar-tr" dir="rtl">(خارج الجسم الحي)</span></td><td>Outside the living body. Tissue engineering is the <strong>manufacturing of body parts ex vivo</strong>.</td></tr>
-  </tbody></table></div>
-  <div class="hl teal">🔗 <strong>Three fields meet here:</strong> Biology + Engineering + Medicine = Tissue engineering.</div>
+<div class="card"><div class="ctitle">① Tissue engineering</div><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75"><strong>Tissue engineering</strong> <span class="ar-tr" dir="rtl">(هندسة الأنسجة)</span> — applies the principles of <strong>biology and engineering</strong> to develop <strong>viable substitutes</strong></div><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75">The substitutes <strong>restore, maintain or improve</strong> the function of human tissues or a whole organ</div><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75">It is the <strong>manufacturing of body parts ex vivo</strong> <span class="ar-tr" dir="rtl">(خارج الجسم الحي)</span></div><div class="hl teal" style="direction:rtl;text-align:right">💡 <b>يعني إيه؟</b> هندسة الأنسجة إننا نصنّع بديل حي لجزء من الجسم في المعمل (<bdi dir="ltr">ex vivo</bdi> يعني برّه الجسم) عشان نرجّع وظيفة النسيج أو العضو أو نحسّنها.</div></div>
+<div class="card"><div class="ctitle">② The triad: 3 components</div><ul class="steps"><li><span class="sn">1</span><span class="li-body"><strong>Cells</strong> — form the new tissue matrix</span></li><li><span class="sn">2</span><span class="li-body"><strong>Growth factors</strong> <span class="ar-tr" dir="rtl">(عوامل النمو)</span> — promote and facilitate cell function</span></li><li><span class="sn">3</span><span class="li-body"><strong>Scaffolds</strong> — act as an extracellular matrix <span class="ar-tr" dir="rtl">(المصفوفة خارج الخلوية)</span>; allow differentiation, proliferation and biosynthesis</span></li></ul><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75">Tissue engineering works only when the three components <strong>interact successfully</strong></div><div class="hl teal" style="direction:rtl;text-align:right">💡 <b>يعني إيه؟</b> التلاتة لازم يشتغلوا مع بعض: الخلايا تبني، وعوامل النمو تحفّز الخلايا، والـ <bdi dir="ltr">scaffold</bdi> يدعم الاتنين.</div></div>
+<div class="card"><div class="ctitle">③ The tissue engineering paradigm (5 steps)</div><ul class="steps"><li><span class="sn">1</span><span class="li-body">Cells are <strong>harvested from the patient</strong></span></li><li><span class="sn">2</span><span class="li-body">Cells are <strong>expanded</strong> (they proliferate in culture)</span></li><li><span class="sn">3</span><span class="li-body">Cells are <strong>seeded on a scaffold</strong>; mechanical and/or molecular signalling stimulates it to develop a <strong>tissue equivalent</strong></span></li><li><span class="sn">4</span><span class="li-body">The <strong>construct</strong> (cells in the scaffold) is <strong>cultured</strong></span></li><li><span class="sn">5</span><span class="li-body">The construct is <strong>implanted in vivo</strong> <span class="ar-tr" dir="rtl">(داخل الجسم الحي)</span> — back into the patient</span></li></ul><div class="hl teal" style="direction:rtl;text-align:right">💡 <b>يعني إيه؟</b> ناخد خلايا من المريض، نكثّرها، نزرعها على <bdi dir="ltr">scaffold</bdi>، نحضّن الـ <bdi dir="ltr">construct</bdi>، وبعدين نرجّعه للمريض.</div></div>
+<div class="card"><div class="ctitle">④ Repair, regeneration and regenerative medicine</div><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75"><strong>Repair</strong> — reestablishing lost or damaged tissue to <strong>retain continuity</strong></div><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75"><strong>Regeneration</strong> — replacing lost or damaged tissue with an <strong>exact copy</strong>: <strong>morphology and function are restored</strong></div><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75"><strong>Regenerative medicine</strong> <span class="ar-tr" dir="rtl">(الطب التجديدي)</span> — <strong>replace, engineer or regenerate</strong> human cells, tissues or organs to <strong>restore or establish normal function</strong></div><div class="hl teal" style="direction:rtl;text-align:right">💡 <b>يعني إيه؟</b> الـ <bdi dir="ltr">repair</bdi> بيلمّ النسيج وبيرجّع استمراريته بس. الـ <bdi dir="ltr">regeneration</bdi> بيرجّعه نسخة زي الأصل بالشكل والوظيفة.</div></div>
+<div class="card"><div class="ctitle">⑤ Stem cells</div><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75"><strong>Stem cell</strong> <span class="ar-tr" dir="rtl">(الخلية الجذعية)</span> — an <strong>undifferentiated</strong> cell that <strong>divides and renews itself</strong> and <strong>gives rise to specialized cell types</strong></div><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75">It has <strong>no function</strong> of its own and is not yet specialized</div><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75">It can differentiate into <strong>more than one</strong> cell type and divide for <strong>indefinite periods</strong></div><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75">After transplantation to a damaged recipient it should differentiate into the <strong>appropriate cell types</strong></div><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75">Example: the <strong>hematopoietic stem cell</strong> <span class="ar-tr" dir="rtl">(الخلية الجذعية المكوّنة للدم)</span> gives <strong>all blood cells</strong></div><div class="hl teal" style="direction:rtl;text-align:right">💡 <b>يعني إيه؟</b> الخلية الجذعية لسه ما اتخصصتش، بتنقسم وتجدد نفسها وتطلّع خلايا متخصصة. أشهر مثال الخلية اللي بتطلّع كل خلايا الدم.</div></div>
+<div class="card"><div class="ctitle">⑥ The 3 properties and differentiation</div><ul class="steps"><li><span class="sn">1</span><span class="li-body"><strong>Unspecialized</strong> — has not yet “decided” its adult cell type; no tissue-specific structures for a specific function</span></li><li><span class="sn">2</span><span class="li-body"><strong>Self-renewal</strong> <span class="ar-tr" dir="rtl">(التجدد الذاتي)</span> — divides and renews itself for long periods while <strong>preserving the undifferentiated state</strong></span></li><li><span class="sn">3</span><span class="li-body"><strong>Potency</strong> — the <strong>differentiation potential</strong>: the ability to give specific mature cells that build the special tissues</span></li></ul><div class="li-body" style="padding:9px 0;border-bottom:1px dashed rgba(127,127,127,.25);line-height:1.75"><strong>Cell differentiation</strong> <span class="ar-tr" dir="rtl">(التمايز الخلوي)</span> — a less specialized cell acquires a <strong>more specialized form and function</strong></div><div class="hl teal" style="direction:rtl;text-align:right">💡 <b>يعني إيه؟</b> الـ <bdi dir="ltr">self-renewal</bdi> بيطلّع خلايا جذعية تانية زي ما هي، والـ <bdi dir="ltr">differentiation</bdi> بيطلّع خلايا متخصصة.</div></div>
 </div>
 
-<div class="card">
-  <div class="ctitle">🔺 The tissue engineering triad</div>
-  <div class="hl green">Tissue engineering is based on a <strong>biological triad</strong>. It works only when the <strong>three components interact successfully</strong>.</div>
-  <div class="table-wrap"><table class="tbl"><thead><tr><th>Component</th><th>Role</th></tr></thead><tbody>
-    <tr><td>Cells <span class="ar-tr" dir="rtl">(الخلايا)</span></td><td><strong>Formation of the new tissue matrix</strong>.</td></tr>
-    <tr><td>Growth factors <span class="ar-tr" dir="rtl">(عوامل النمو)</span></td><td><strong>Promote and facilitate cell function</strong>.</td></tr>
-    <tr><td>Scaffolds</td><td>Act as an <strong>extracellular matrix</strong> <span class="ar-tr" dir="rtl">(المصفوفة خارج الخلوية)</span>, allowing cell <strong>differentiation, proliferation and biosynthesis</strong>.</td></tr>
-  </tbody></table></div>
-  <div class="dia">
-    <svg viewBox="0 0 360 290" role="img" aria-label="Tissue engineering triad: cells, scaffolds, growth factors">
-      <circle cx="132" cy="112" r="80" fill="rgba(52,211,153,.2)" stroke="#34d399" stroke-width="2.5"/>
-      <circle cx="228" cy="112" r="80" fill="rgba(56,189,248,.2)" stroke="#38bdf8" stroke-width="2.5"/>
-      <circle cx="180" cy="190" r="80" fill="rgba(232,179,76,.2)" stroke="#e8b34c" stroke-width="2.5"/>
-      <text x="96" y="92" class="sv-t" text-anchor="middle">Cells</text>
-      <text x="264" y="92" class="sv-t" text-anchor="middle">Scaffolds</text>
-      <text x="180" y="238" class="sv-t" text-anchor="middle">Growth factors</text>
-      <text x="180" y="146" class="sv-h" text-anchor="middle">Tissue</text>
-      <text x="180" y="162" class="sv-h" text-anchor="middle">engineering</text>
-    </svg>
-    <div class="cap">The triad. In the lecture figure the third component is labeled “biological factors”.</div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="ctitle">🔄 The tissue engineering paradigm</div>
-  <ul class="steps">
-    <li><span class="sn">1</span><span class="li-body"><strong>Cells are harvested from the patient</strong>: isolation of a cell source.</span></li>
-    <li><span class="sn">2</span><span class="li-body"><strong>Expanding the cells</strong>: the cells proliferate in culture.</span></li>
-    <li><span class="sn">3</span><span class="li-body"><strong>Cells are seeded on a scaffold</strong>, then <strong>mechanical and/or molecular signalling</strong> stimulates the cell-seeded scaffold to develop a <strong>tissue equivalent</strong>.</span></li>
-    <li><span class="sn">4</span><span class="li-body"><strong>Construct with cells in the scaffold is cultured</strong>.</span></li>
-    <li><span class="sn">5</span><span class="li-body"><strong>Implantation of the construct in vivo</strong> <span class="ar-tr" dir="rtl">(داخل الجسم الحي)</span>: it is placed back into the patient.</span></li>
-  </ul>
-</div>
-
-<div class="card">
-  <div class="ctitle">🧾 Scientific terms</div>
-  <div class="table-wrap"><table class="tbl"><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody>
-    <tr><td>Repair</td><td>Reestablishing lost or damaged tissue to <strong>retain continuity</strong>.</td></tr>
-    <tr><td>Regeneration</td><td>Replacement of lost or damaged tissue with an <strong>exact copy</strong>, so that <strong>morphology and function are restored</strong>.</td></tr>
-    <tr><td>Regenerative medicine <span class="ar-tr" dir="rtl">(الطب التجديدي)</span></td><td>Aims to <strong>replace, engineer or regenerate</strong> human cells, tissues or organs to <strong>restore or establish normal function</strong>.</td></tr>
-  </tbody></table></div>
-  <div class="hl rose">⚠️ <strong>Don’t mix them up:</strong> repair only keeps the tissue continuous. Only <strong>regeneration</strong> gives back the same morphology <em>and</em> function.</div>
-</div>
-
-<div class="glossary-section" style="margin:22px 0 8px"><h3>📗 Part 2 — Introduction to stem cells</h3></div>
-
-<div class="card">
-  <div class="ctitle">🧫 What is a stem cell?</div>
-  <div class="hl amber"><strong>Stem cell</strong> <span class="ar-tr" dir="rtl">(الخلية الجذعية)</span> is an <strong>undifferentiated (unspecialized) cell</strong> <span class="ar-tr" dir="rtl">(غير متمايزة)</span> that is capable of <strong>dividing and renewing itself</strong>, and can <strong>give rise to specialized cell types</strong>.</div>
-  <div class="ctitle" style="margin-top:14px">✅ What we expect from a stem cell</div>
-  <ul class="steps">
-    <li><span class="sn">1</span><span class="li-body">It has <strong>no function</strong> of its own and is <strong>not yet specialized</strong>.</span></li>
-    <li><span class="sn">2</span><span class="li-body">It can <strong>differentiate into more than one cell type</strong>.</span></li>
-    <li><span class="sn">3</span><span class="li-body">It has the ability to <strong>divide for indefinite periods</strong>.</span></li>
-    <li><span class="sn">4</span><span class="li-body">It should <strong>differentiate into the appropriate cell types</strong> when transplanted to a damaged recipient.</span></li>
-  </ul>
-</div>
-
-<div class="card">
-  <div class="ctitle">🔀 Two possible fates</div>
-  <div class="dia big">
-    <svg viewBox="0 0 640 270" role="img" aria-label="A stem cell either self-renews or differentiates into specialized cells">
-      <circle cx="78" cy="128" r="36" fill="rgba(232,179,76,.25)" stroke="#e8b34c" stroke-width="3"/>
-      <text x="78" y="190" class="sv-t" text-anchor="middle">Stem cell</text>
-      <path d="M108 102 C148 44 218 44 260 82" class="sv-line"/>
-      <polygon points="262,84 250,80 257,72" fill="#9bc2bd"/>
-      <text x="186" y="34" class="sv-h" text-anchor="middle">Self-renewal</text>
-      <circle cx="292" cy="104" r="26" fill="rgba(232,179,76,.25)" stroke="#e8b34c" stroke-width="3"/>
-      <circle cx="352" cy="104" r="26" fill="rgba(232,179,76,.25)" stroke="#e8b34c" stroke-width="3"/>
-      <text x="322" y="160" class="sv-d" text-anchor="middle">more stem cells</text>
-      <path d="M108 156 C170 214 290 232 392 226" class="sv-line"/>
-      <polygon points="404,226 391,219 391,233" fill="#9bc2bd"/>
-      <text x="230" y="258" class="sv-h" text-anchor="middle">Differentiation</text>
-      <rect x="400" y="30" width="62" height="38" rx="8" fill="rgba(240,100,92,.22)" stroke="#f0645c" stroke-width="2.5"/>
-      <text x="431" y="94" class="sv-d" text-anchor="middle">Skin cells</text>
-      <ellipse cx="556" cy="50" rx="32" ry="17" fill="rgba(167,139,250,.25)" stroke="#a78bfa" stroke-width="2.5"/>
-      <text x="556" y="94" class="sv-d" text-anchor="middle">Muscle cells</text>
-      <circle cx="428" cy="176" r="22" fill="rgba(240,100,92,.35)" stroke="#f0645c" stroke-width="2.5"/>
-      <text x="428" y="254" class="sv-d" text-anchor="middle">Red blood cells</text>
-      <path d="M560 180 q10 -26 21 0 q10 26 21 0" fill="none" stroke="#38bdf8" stroke-width="3"/>
-      <text x="581" y="254" class="sv-d" text-anchor="middle">Nerve cells</text>
-    </svg>
-    <div class="cap">A stem cell can renew itself, or differentiate into a specialized cell type.</div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="ctitle">🩸 Example — the hematopoietic stem cell</div>
-  <div class="hl teal"><strong>Hematopoietic stem cell</strong> <span class="ar-tr" dir="rtl">(الخلية الجذعية المكوّنة للدم)</span> gives rise to <strong>all blood cells</strong> in the body.</div>
-  <div class="tree">
-    <div class="tnode root">Blood (hematopoietic) stem cell</div>
-    <div class="tbranch">
-      <div class="tnode mid">Myeloid stem cell</div>
-      <div class="touts"><div class="tnode">Red blood cells</div><div class="tnode">Platelets</div><div class="tnode">Myeloblast → White blood cells</div></div>
-    </div>
-    <div class="tbranch">
-      <div class="tnode mid">Lymphoid stem cell</div>
-      <div class="touts"><div class="tnode">Lymphoblast → White blood cells</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="glossary-section" style="margin:22px 0 8px"><h3>📗 Part 3 — Properties of stem cells</h3></div>
-
-<div class="card">
-  <div class="ctitle">⭐ The 3 unique properties</div>
-  <div class="table-wrap"><table class="tbl"><thead><tr><th>Property</th><th>Meaning</th></tr></thead><tbody>
-    <tr><td>1. Unspecialized <span class="ar-tr" dir="rtl">(غير متخصصة)</span></td><td>They have not yet “decided” what type of adult cell they will be. They have <strong>no tissue-specific structures</strong> that allow them to perform a specific function.</td></tr>
-    <tr><td>2. Self-renewal <span class="ar-tr" dir="rtl">(التجدد الذاتي)</span></td><td>Capable of <strong>dividing and renewing themselves for long periods</strong> while <strong>preserving the undifferentiated state</strong>.</td></tr>
-    <tr><td>3. Potency</td><td>The <strong>differentiation potential</strong>: the ability to give <strong>specific cell types</strong> (mature or differentiated cells) that build the special tissues of the body.</td></tr>
-  </tbody></table></div>
-</div>
-
-<div class="card">
-  <div class="ctitle">🧬 Cell differentiation</div>
-  <div class="hl amber"><strong>Cell differentiation</strong> <span class="ar-tr" dir="rtl">(التمايز الخلوي)</span> is the process in which a <strong>less specialized cell</strong> develops to acquire a <strong>more specialized form and function</strong>.</div>
-  <div class="hl sky">🧭 <strong>Self-renewal</strong> gives more <strong>stem cells</strong>. <strong>Differentiation</strong> gives <strong>specialized cells</strong>.</div>
-</div>
-
-</div>
-
-<!-- ============ 2) KEY TERMS ============ -->
+<!-- ============ 2) KEY POINTS ============ -->
 <div class="lec-view" id="view-keypoints-lec1" style="display:none">
-<div class="glossary-section" style="margin-top:0;margin-bottom:14px">
-    <h3>⭐ Key Terms &amp; Facts</h3>
-    <div class="sub">أهم المصطلحات والمعلومات في المحاضرة — 17 نقطة. الحاجات اللي بتتكرر في الامتحان.</div>
-  </div>
+<div class="hl sky sec-intro-keypoints" style="direction:rtl;text-align:right;margin-top:0"><b>⭐ القسم ده بيتناول إيه؟</b> ملخص من 12 نقطة لأهم ما يتكرر في الامتحان. راجع بيه بعد الشرح.</div>
+
+<div class="glossary-section" style="margin-top:0;margin-bottom:14px"><h3>⭐ Key Points</h3><div class="sub">12 نقطة بس، هي أهم اللي بيتكرر في الامتحان.</div></div>
 <div class="kp-grid">
-<div class="kp-card"><div class="kp-num">1</div><div class="kp-badge">Tissue engineering</div><div class="kp-text"><strong>Biology + engineering</strong> (+ medicine) to develop <strong>viable substitutes</strong> that <strong>restore, maintain or improve</strong> tissue or organ function.</div><div class="kp-arabic">بدائل حيوية قابلة للحياة تستعيد وظيفة النسيج أو العضو</div></div>
-<div class="kp-card amber"><div class="kp-num">2</div><div class="kp-badge">Ex vivo vs in vivo</div><div class="kp-text">Tissue engineering manufactures body parts <strong>ex vivo</strong> (outside the body); the construct is implanted <strong>in vivo</strong> (inside the body).</div><div class="kp-arabic">خارج الجسم الحي (التصنيع) مقابل داخل الجسم الحي (الزرع)</div></div>
-<div class="kp-card rose"><div class="kp-num">3</div><div class="kp-badge">The triad</div><div class="kp-text"><strong>Cells</strong> · <strong>Growth factors</strong> · <strong>Scaffolds</strong>. Success needs the <strong>interaction of all three</strong>.</div><div class="kp-arabic">ثلاثة مكوّنات لازم تتفاعل مع بعض: الخلايا وعوامل النمو والـ scaffolds</div></div>
-<div class="kp-card violet"><div class="kp-num">4</div><div class="kp-badge">Cells</div><div class="kp-text">Responsible for the <strong>formation of the new tissue matrix</strong>.</div><div class="kp-arabic">تكوّن المصفوفة النسيجية الجديدة</div></div>
-<div class="kp-card sky"><div class="kp-num">5</div><div class="kp-badge">Growth factors</div><div class="kp-text"><strong>Promote and facilitate</strong> cell function.</div><div class="kp-arabic">تحفّز وتُيسّر الوظيفة الخلوية</div></div>
-<div class="kp-card"><div class="kp-num">6</div><div class="kp-badge">Scaffolds</div><div class="kp-text">Act as an <strong>extracellular matrix</strong>, allowing <strong>differentiation, proliferation and biosynthesis</strong>.</div><div class="kp-arabic">تعمل كمصفوفة خارج خلوية تسمح بالتمايز والتكاثر والتخليق الحيوي</div></div>
-<div class="kp-card amber"><div class="kp-num">7</div><div class="kp-badge">Paradigm</div><div class="kp-text">Harvest cells → <strong>expand</strong> → <strong>seed on scaffold</strong> (+ signalling) → <strong>culture the construct</strong> → <strong>implant in vivo</strong>.</div><div class="kp-arabic">ترتيب الخطوات من المريض ورجوعاً إلى المريض</div></div>
-<div class="kp-card rose"><div class="kp-num">8</div><div class="kp-badge">Repair</div><div class="kp-text">Reestablishing lost or damaged tissue to <strong>retain continuity</strong>.</div><div class="kp-arabic">الحفاظ على استمرارية النسيج فقط</div></div>
-<div class="kp-card violet"><div class="kp-num">9</div><div class="kp-badge">Regeneration</div><div class="kp-text">Replacement with an <strong>exact copy</strong>; <strong>morphology and function</strong> are restored.</div><div class="kp-arabic">استبدال النسيج بنسخة مطابقة تعيد الشكل والوظيفة</div></div>
-<div class="kp-card sky"><div class="kp-num">10</div><div class="kp-badge">Regenerative medicine</div><div class="kp-text"><strong>Replace, engineer or regenerate</strong> cells, tissues or organs to <strong>restore or establish normal function</strong>.</div><div class="kp-arabic">استبدال الخلايا أو الأنسجة أو الأعضاء أو هندستها أو تجديدها لاستعادة الوظيفة الطبيعية</div></div>
-<div class="kp-card"><div class="kp-num">11</div><div class="kp-badge">Stem cell</div><div class="kp-text"><strong>Undifferentiated</strong> cell that <strong>divides and renews itself</strong> and <strong>gives rise to specialized cells</strong>.</div><div class="kp-arabic">خلية غير متمايزة تنقسم وتجدد نفسها</div></div>
-<div class="kp-card amber"><div class="kp-num">12</div><div class="kp-badge">What we expect from it</div><div class="kp-text">No function yet · differentiates into <strong>more than one</strong> cell type · divides for <strong>indefinite periods</strong> · differentiates into the <strong>appropriate cell types</strong> after transplantation.</div><div class="kp-arabic">ما نتوقعه من الخلية الجذعية</div></div>
-<div class="kp-card rose"><div class="kp-num">13</div><div class="kp-badge">Hematopoietic stem cell</div><div class="kp-text">The classic example: gives rise to <strong>all blood cells</strong> in the body.</div><div class="kp-arabic">تعطي جميع خلايا الدم في الجسم</div></div>
-<div class="kp-card violet"><div class="kp-num">14</div><div class="kp-badge">1) Unspecialized</div><div class="kp-text">Has not yet “decided” its adult cell type; <strong>no tissue-specific structures</strong> for a specific function.</div><div class="kp-arabic">لا تملك تراكيب نوعية تؤدي وظيفة محددة</div></div>
-<div class="kp-card sky"><div class="kp-num">15</div><div class="kp-badge">2) Self-renewal</div><div class="kp-text">Divides and renews itself for <strong>long periods</strong> while <strong>preserving the undifferentiated state</strong>.</div><div class="kp-arabic">انقسام لفترات طويلة مع الحفاظ على الحالة غير المتمايزة</div></div>
-<div class="kp-card"><div class="kp-num">16</div><div class="kp-badge">3) Potency</div><div class="kp-text">The <strong>differentiation potential</strong>: giving specific mature cell types that build special tissues.</div><div class="kp-arabic">القدرة على إعطاء أنواع خلوية متخصصة ناضجة</div></div>
-<div class="kp-card amber"><div class="kp-num">17</div><div class="kp-badge">Differentiation</div><div class="kp-text">A <strong>less specialized</strong> cell acquires a <strong>more specialized form and function</strong>.</div><div class="kp-arabic">اكتساب شكل ووظيفة أكثر تخصصاً</div></div>
+<div class="kp-card "><div class="kp-num">1</div><div class="kp-badge">Tissue engineering</div><div class="kp-text"><strong>Biology + engineering</strong> to develop <strong>viable substitutes</strong> that restore, maintain or improve function.</div><div class="kp-arabic">بدائل حيّة بترجّع وظيفة النسيج</div></div>
+<div class="kp-card amber"><div class="kp-num">2</div><div class="kp-badge">Ex vivo</div><div class="kp-text">Tissue engineering manufactures body parts <strong>outside the body</strong>.</div><div class="kp-arabic"><bdi dir="ltr">ex vivo</bdi> يعني برّه الجسم</div></div>
+<div class="kp-card rose"><div class="kp-num">3</div><div class="kp-badge">The triad</div><div class="kp-text"><strong>Cells</strong> · <strong>growth factors</strong> · <strong>scaffolds</strong>. All three must interact.</div><div class="kp-arabic">خلايا وعوامل نمو و<bdi dir="ltr">scaffolds</bdi></div></div>
+<div class="kp-card violet"><div class="kp-num">4</div><div class="kp-badge">Cells</div><div class="kp-text">Form the <strong>new tissue matrix</strong>.</div><div class="kp-arabic">الخلايا بتبني النسيج</div></div>
+<div class="kp-card sky"><div class="kp-num">5</div><div class="kp-badge">Growth factors</div><div class="kp-text"><strong>Promote and facilitate</strong> cell function.</div><div class="kp-arabic">بتحفّز الخلايا</div></div>
+<div class="kp-card "><div class="kp-num">6</div><div class="kp-badge">Scaffolds</div><div class="kp-text">Act as an <strong>extracellular matrix</strong>: differentiation, proliferation, biosynthesis.</div><div class="kp-arabic">بتدعم الخلايا زي المصفوفة</div></div>
+<div class="kp-card amber"><div class="kp-num">7</div><div class="kp-badge">Paradigm</div><div class="kp-text"><strong>Harvest</strong> → <strong>expand</strong> → <strong>seed on scaffold</strong> → <strong>culture the construct</strong> → <strong>implant in vivo</strong>.</div><div class="kp-arabic">من المريض وللمريض</div></div>
+<div class="kp-card rose"><div class="kp-num">8</div><div class="kp-badge">Repair</div><div class="kp-text">Reestablishing lost or damaged tissue to <strong>retain continuity</strong>.</div><div class="kp-arabic">بيلمّ النسيج بس</div></div>
+<div class="kp-card violet"><div class="kp-num">9</div><div class="kp-badge">Regeneration</div><div class="kp-text"><strong>Exact copy</strong>: morphology and function restored.</div><div class="kp-arabic">نسخة زي الأصل بالشكل والوظيفة</div></div>
+<div class="kp-card sky"><div class="kp-num">10</div><div class="kp-badge">Regenerative medicine</div><div class="kp-text"><strong>Replace, engineer or regenerate</strong> cells, tissues or organs to restore or establish normal function.</div><div class="kp-arabic">استبدال أو هندسة أو تجديد</div></div>
+<div class="kp-card "><div class="kp-num">11</div><div class="kp-badge">Stem cell</div><div class="kp-text"><strong>Undifferentiated</strong>; divides and renews itself; gives specialized cells. Example: <strong>hematopoietic</strong> stem cell → all blood cells.</div><div class="kp-arabic">خلية لسه ما اتخصصتش</div></div>
+<div class="kp-card amber"><div class="kp-num">12</div><div class="kp-badge">3 properties</div><div class="kp-text"><strong>Unspecialized</strong> · <strong>self-renewal</strong> · <strong>potency</strong>. Differentiation = becoming more specialized.</div><div class="kp-arabic">التمايز يعني تخصص أكتر</div></div>
 </div>
 </div>
 
 <!-- ============ 3) MEMORY LAB ============ -->
 <div class="lec-view" id="view-memory-lec1" style="display:none">
-<div class="glossary-section" style="margin-top:0;margin-bottom:14px">
-  <h3>🧠 Memory Lab</h3>
-  <div class="sub">اختصارات ومقارنات وأسئلة استرجاع بتثبّت المحاضرة في دماغك. اقرأ، غطّي الإجابة، وجاوب من ذاكرتك.</div>
-</div>
+<div class="hl sky sec-intro-memory" style="direction:rtl;text-align:right;margin-top:0"><b>🧠 القسم ده بيتناول إيه؟</b> 4 حيل قصيرة للحفظ بس، من غير تكرار للشرح.</div>
 
+<div class="glossary-section" style="margin-top:0;margin-bottom:14px"><h3>🧠 Memory Lab</h3><div class="sub">حيل قصيرة للحفظ بس.</div></div>
 <div class="recall-sheet">
-  <h3>✨ Memory tricks</h3>
-  <div class="sub">Four short tricks cover the whole lecture.</div>
-  <div class="recall-block">
-    <div class="rb-title">The triad</div>
-    <div class="mn-big">C · G · S</div>
-    <div class="rb-text"><strong>C</strong>ells <strong>make</strong> the matrix · <strong>G</strong>rowth factors <strong>move</strong> (stimulate) the cells · <strong>S</strong>caffolds <strong>support</strong> everything.</div>
-    <div class="ar-note">الخلايا تبني، وعوامل النمو تحفّز الخلايا، والـ scaffold يدعم الاتنين.</div>
-  </div>
-  <div class="recall-block">
-    <div class="rb-title">The 3 properties of a stem cell</div>
-    <div class="mn-big">U · S · P</div>
-    <div class="rb-text"><strong>U</strong>nspecialized · <strong>S</strong>elf-renewal · <strong>P</strong>otency.</div>
-    <div class="ar-note">خلية غير متمايزة، تجدد نفسها، وتعطي أنواعاً خلوية متخصصة.</div>
-  </div>
-  <div class="recall-block">
-    <div class="rb-title">The paradigm order</div>
-    <div class="mn-big">Take → Multiply → Seed → Culture → Implant</div>
-    <div class="rb-text"><strong>Harvest</strong> the cells, <strong>expand</strong> them, <strong>seed</strong> them on the scaffold, <strong>culture</strong> the construct, <strong>implant</strong> it in vivo.</div>
-    <div class="ar-note">ناخد الخلايا من المريض، نكثّرها، نزرعها على الـ scaffold، نحضّن الـ construct، وبعدين نرجّعه للمريض.</div>
-  </div>
-  <div class="recall-block">
-    <div class="rb-title">Repair vs regeneration</div>
-    <div class="mn-big">Patch it · Rebuild it</div>
-    <div class="rb-text"><strong>Repair</strong> = patch it (continuity). <strong>Regeneration</strong> = rebuild it (exact copy, morphology and function).</div>
-  </div>
+<div class="recall-block"><div class="rb-title">The triad</div><div class="mn-big">C · G · S</div><div class="rb-text"><strong>C</strong>ells <strong>make</strong> the matrix · <strong>G</strong>rowth factors <strong>guide</strong> the cells · <strong>S</strong>caffolds <strong>support</strong> them.</div><div class="ar-note">الخلايا تبني، وعوامل النمو تحفّز، والـ <bdi dir="ltr">scaffold</bdi> يدعم.</div></div>
+<div class="recall-block"><div class="rb-title">Stem cell properties</div><div class="mn-big">U · S · P</div><div class="rb-text"><strong>U</strong>nspecialized · <strong>S</strong>elf-renewal · <strong>P</strong>otency.</div><div class="ar-note">أول حرف من كل خاصية.</div></div>
+<div class="recall-block"><div class="rb-title">The paradigm</div><div class="mn-big">Take → Multiply → Seed → Culture → Implant</div><div class="rb-text"><strong>Harvest</strong>, <strong>expand</strong>, <strong>seed</strong>, <strong>culture</strong>, <strong>implant</strong>.</div><div class="ar-note">خمس خطوات بالترتيب.</div></div>
+<div class="recall-block"><div class="rb-title">Repair vs regeneration</div><div class="mn-big">Patch it · Rebuild it</div><div class="rb-text"><strong>Repair</strong> = patch (continuity). <strong>Regeneration</strong> = rebuild (exact copy, function restored).</div><div class="ar-note">الـ <bdi dir="ltr">repair</bdi> ترقيع، والـ <bdi dir="ltr">regeneration</bdi> إعادة بناء.</div></div>
 </div>
-
-<div class="card" style="margin-top:16px">
-  <div class="ctitle">⚖️ Repair vs Regeneration</div>
-  <div class="table-wrap"><table class="tbl"><thead><tr><th></th><th>Repair</th><th>Regeneration</th></tr></thead><tbody>
-    <tr><td>Result</td><td>Retains <strong>continuity</strong></td><td><strong>Exact copy</strong> of the lost tissue</td></tr>
-    <tr><td>Morphology &amp; function</td><td>Not guaranteed</td><td><strong>Restored</strong></td></tr>
-    <tr><td>Remember</td><td>Patch it</td><td>Rebuild it</td></tr>
-  </tbody></table></div>
-</div>
-
-<div class="card">
-  <div class="ctitle">⚖️ Self-renewal vs Differentiation</div>
-  <div class="table-wrap"><table class="tbl"><thead><tr><th></th><th>Self-renewal</th><th>Differentiation</th></tr></thead><tbody>
-    <tr><td>The stem cell gives</td><td>More <strong>stem cells</strong></td><td><strong>Specialized</strong> (mature) cells</td></tr>
-    <tr><td>State</td><td>Stays <strong>undifferentiated</strong></td><td>Becomes <strong>more specialized</strong></td></tr>
-    <tr><td>Remember</td><td>Copy myself</td><td>Become a worker</td></tr>
-  </tbody></table></div>
-</div>
-
-<div class="card">
-  <div class="ctitle">⚖️ The triad at a glance</div>
-  <div class="table-wrap"><table class="tbl"><thead><tr><th>Component</th><th>One-line job</th><th>Remember</th></tr></thead><tbody>
-    <tr><td>Cells</td><td>Form the new <strong>tissue matrix</strong></td><td>Make</td></tr>
-    <tr><td>Growth factors</td><td><strong>Promote and facilitate</strong> cell function</td><td>Move</td></tr>
-    <tr><td>Scaffolds</td><td><strong>Extracellular matrix</strong> for differentiation, proliferation, biosynthesis</td><td>Support</td></tr>
-  </tbody></table></div>
-</div>
-
-<div class="glossary-section" style="margin:18px 0 10px">
-  <h3>❓ Active recall</h3>
-  <div class="sub">اضغط على السؤال عشان تشوف الإجابة. جاوب في دماغك الأول.</div>
-</div>
-<details class="card qacard"><summary class="ctitle">❓ What is tissue engineering?</summary><div class="rdef">✅ It applies the principles of <b>biology and engineering</b> to develop <b>viable substitutes</b> that <b>restore, maintain or improve</b> the function of tissues or a whole organ.</div></details>
-<details class="card qacard"><summary class="ctitle">❓ What does “ex vivo” mean in tissue engineering?</summary><div class="rdef">✅ Body parts are <b>manufactured outside the body</b> to produce biological substitutes.</div></details>
-<details class="card qacard"><summary class="ctitle">❓ What are the three components of the triad?</summary><div class="rdef">✅ <b>Cells</b>, <b>growth factors</b> and <b>scaffolds</b>.</div></details>
-<details class="card qacard"><summary class="ctitle">❓ What does each triad component do?</summary><div class="rdef">✅ <b>Cells</b> form the new tissue matrix · <b>growth factors</b> promote and facilitate cell function · <b>scaffolds</b> act as an extracellular matrix (differentiation, proliferation, biosynthesis).</div></details>
-<details class="card qacard"><summary class="ctitle">❓ List the steps of the tissue engineering paradigm.</summary><div class="rdef">✅ <b>Harvest</b> cells from the patient → <b>expand</b> them → <b>seed</b> on a scaffold (signalling develops a tissue equivalent) → <b>culture</b> the construct → <b>implant</b> in vivo.</div></details>
-<details class="card qacard"><summary class="ctitle">❓ What is the difference between repair and regeneration?</summary><div class="rdef">✅ <b>Repair</b> retains continuity. <b>Regeneration</b> replaces the tissue with an exact copy, so <b>morphology and function</b> are restored.</div></details>
-<details class="card qacard"><summary class="ctitle">❓ What is regenerative medicine?</summary><div class="rdef">✅ It aims to <b>replace, engineer or regenerate</b> human cells, tissues or organs to <b>restore or establish normal function</b>.</div></details>
-<details class="card qacard"><summary class="ctitle">❓ Define a stem cell.</summary><div class="rdef">✅ An <b>undifferentiated (unspecialized)</b> cell capable of <b>dividing and renewing itself</b> that can <b>give rise to specialized cell types</b>.</div></details>
-<details class="card qacard"><summary class="ctitle">❓ Give an example of a stem cell.</summary><div class="rdef">✅ The <b>hematopoietic stem cell</b>: it gives rise to <b>all blood cells</b> in the body.</div></details>
-<details class="card qacard"><summary class="ctitle">❓ What are the 3 unique properties of stem cells?</summary><div class="rdef">✅ <b>Unspecialized</b>, <b>self-renewal</b>, <b>potency</b>.</div></details>
-<details class="card qacard"><summary class="ctitle">❓ What is self-renewal, and what is potency?</summary><div class="rdef">✅ <b>Self-renewal</b>: dividing and renewing for long periods while preserving the undifferentiated state. <b>Potency</b>: the differentiation potential to give specific mature cell types.</div></details>
-<details class="card qacard"><summary class="ctitle">❓ What is cell differentiation?</summary><div class="rdef">✅ The process in which a <b>less specialized</b> cell develops to acquire a <b>more specialized form and function</b>.</div></details>
-
 </div>
 
 <!-- ============ 4) QUIZ ============ -->
 <div class="quiz-section lec-view" id="view-quiz-lec1" style="display:none">
-  <h3>🧠 Interactive Quiz — Tissue Engineering &amp; Stem Cells</h3>
+<div class="hl sky sec-intro-quiz" style="direction:rtl;text-align:right;margin-top:0"><b>❓ القسم ده بيتناول إيه؟</b> 25 سؤال MCQ زي الامتحان، والشرح بيظهر بعد كل إجابة.</div>
+
+  <h3>🧠 Interactive Quiz — Introduction to Tissue Engineering &amp; Stem Cells</h3>
   <div class="quiz-meta">
     <span>25 Questions Available</span>
     Choose how many to attempt:
@@ -1003,11 +830,11 @@ details[open]>summary::before{transform:rotate(90deg)}
 <section class="connect" aria-labelledby="connectTitle">
   <div class="connect-head">
     <h3 id="connectTitle">💚 عجبتك المحاضرة؟</h3>
-    <p>دي كانت <b>أول محاضرة في Stem Cells &amp; Tissue Engineering</b> من <b>FullMark</b>. باقي المحاضرات بنفس النظام بالظبط، وبتوصلك جاهزة للمذاكرة.</p>
+    <p>دي كانت <b>المحاضرة الأولى في Stem Cells &amp; Tissue Engineering</b> من <b>FullMark</b>. باقي المحاضرات بنفس النظام بالظبط، وبتوصلك جاهزة للمذاكرة.</p>
   </div>
   <div class="feat-grid">
     <div class="feat"><b>📖 شرح كامل</b>كل معلومة في المحاضرة، منظّمة وبدون حشو</div>
-    <div class="feat"><b>⭐ Key Terms</b>أهم المصطلحات قبل الامتحان</div>
+    <div class="feat"><b>⭐ Key Points</b>أهم المصطلحات قبل الامتحان</div>
     <div class="feat"><b>🧠 Memory Lab</b>اختصارات ومقارنات وأسئلة استرجاع تثبّت المعلومة</div>
     <div class="feat"><b>❓ Quiz تفاعلي</b>أسئلة MCQ بشرح لكل إجابة</div>
   </div>
@@ -1153,281 +980,281 @@ function switchLecture(lec, btn){ window.scrollTo({top:0,behavior:'smooth'}); bu
 /* ===== QUIZ DATA ===== */
 const QUIZDATA = {
   lec1:[
-{
-"q": "Tissue engineering applies the principles of which two fields to develop viable substitutes?",
-"opts": [
-"Biology and engineering",
-"Chemistry and physics",
-"Pharmacology and genetics",
-"Anatomy and histology"
-],
-"ans": 0,
-"exp": "Tissue engineering applies <b>biology and engineering</b> (with medicine) to develop viable substitutes."
-},
-{
-"q": "The main aim of the substitutes developed by tissue engineering is to:",
-"opts": [
-"Remove damaged tissues only",
-"Stop all cell division",
-"Restore, maintain or improve the function of tissues or a whole organ",
-"Replace stem cells with drugs"
-],
-"ans": 2,
-"exp": "The substitutes <b>restore, maintain or improve</b> tissue or organ function."
-},
-{
-"q": "Manufacturing body parts “ex vivo” means making them:",
-"opts": [
-"Inside the body",
-"Outside the body",
-"Inside the patient’s blood",
-"Only inside animals"
-],
-"ans": 1,
-"exp": "<b>Ex vivo</b> = outside the living body. <b>In vivo</b> = inside the body."
-},
-{
-"q": "Which set represents the tissue engineering triad?",
-"opts": [
-"Cells, drugs, implants",
-"Scaffolds, antibiotics, enzymes",
-"Stem cells, blood, bone",
-"Cells, growth factors, scaffolds"
-],
-"ans": 3,
-"exp": "The biological triad = <b>cells + growth factors + scaffolds</b>."
-},
-{
-"q": "Which triad component is responsible for the formation of the new tissue matrix?",
-"opts": [
-"Growth factors",
-"Cells",
-"Scaffolds",
-"Signalling molecules only"
-],
-"ans": 1,
-"exp": "<b>Cells</b> form the new tissue matrix."
-},
-{
-"q": "The role of growth factors in the triad is to:",
-"opts": [
-"Promote and facilitate cell function",
-"Form the new tissue matrix",
-"Act as the extracellular matrix",
-"Store the cells outside the body"
-],
-"ans": 0,
-"exp": "<b>Growth factors</b> promote and facilitate cell function."
-},
-{
-"q": "Which component acts as an extracellular matrix, allowing cell differentiation, proliferation and biosynthesis?",
-"opts": [
-"Cells",
-"Growth factors",
-"Progenitor cells",
-"Scaffolds"
-],
-"ans": 3,
-"exp": "<b>Scaffolds</b> act as an extracellular matrix."
-},
-{
-"q": "“Reestablishing lost or damaged tissue to retain continuity” describes:",
-"opts": [
-"Regeneration",
-"Differentiation",
-"Repair",
-"Self-renewal"
-],
-"ans": 2,
-"exp": "<b>Repair</b> = retaining continuity."
-},
-{
-"q": "Replacement of lost tissue with an exact copy, so that morphology and function are restored, is called:",
-"opts": [
-"Repair",
-"Potency",
-"Regeneration",
-"Scaffolding"
-],
-"ans": 2,
-"exp": "<b>Regeneration</b> = exact copy, morphology and function restored."
-},
-{
-"q": "Which statement correctly separates repair from regeneration?",
-"opts": [
-"Repair restores function and regeneration does not",
-"Both give an exact copy of the lost tissue",
-"Both are the same process with two names",
-"Regeneration restores morphology and function, while repair only retains continuity"
-],
-"ans": 3,
-"exp": "Only <b>regeneration</b> gives back both morphology and function. <b>Repair</b> only retains continuity."
-},
-{
-"q": "Regenerative medicine aims to:",
-"opts": [
-"Replace, engineer or regenerate cells, tissues or organs to restore or establish normal function",
-"Treat infections with antibiotics",
-"Stop the aging of all tissues",
-"Produce only synthetic drugs"
-],
-"ans": 0,
-"exp": "<b>Regenerative medicine</b> = replace, engineer or regenerate to restore or establish normal function."
-},
-{
-"q": "A stem cell is best defined as:",
-"opts": [
-"A specialized cell with a fixed function",
-"An undifferentiated cell that can divide, renew itself and give rise to specialized cells",
-"A cell that can never divide",
-"A cell found only in blood"
-],
-"ans": 1,
-"exp": "<b>Stem cell</b> = undifferentiated, self-renewing, gives specialized cell types."
-},
-{
-"q": "Which of the following is NOT a feature of stem cells?",
-"opts": [
-"They are not yet specialized",
-"They can differentiate into more than one cell type",
-"They can divide for indefinite periods",
-"They have tissue-specific structures for a specific function"
-],
-"ans": 3,
-"exp": "Stem cells have <b>no tissue-specific structures</b> and no function of their own yet."
-},
-{
-"q": "Which is the correct list of the three unique properties of stem cells?",
-"opts": [
-"Specialized, self-renewal, apoptosis",
-"Unspecialized, self-renewal, potency",
-"Unspecialized, necrosis, potency",
-"Self-renewal, scaffolding, repair"
-],
-"ans": 1,
-"exp": "Remember <b>U·S·P</b>: Unspecialized, Self-renewal, Potency."
-},
-{
-"q": "Dividing and renewing themselves for long periods while preserving the undifferentiated state is called:",
-"opts": [
-"Potency",
-"Differentiation",
-"Self-renewal",
-"Regeneration"
-],
-"ans": 2,
-"exp": "<b>Self-renewal</b> keeps the stem cell undifferentiated while it divides."
-},
-{
-"q": "The ability of stem cells to give specific mature cell types that build special tissues is called:",
-"opts": [
-"Potency",
-"Self-renewal",
-"Proliferation",
-"Repair"
-],
-"ans": 0,
-"exp": "<b>Potency</b> = differentiation potential."
-},
-{
-"q": "The process in which a less specialized cell acquires a more specialized form and function is:",
-"opts": [
-"Cell differentiation",
-"Self-renewal",
-"Cell proliferation",
-"Tissue repair"
-],
-"ans": 0,
-"exp": "<b>Differentiation</b> = becoming more specialized in form and function."
-},
-{
-"q": "The hematopoietic stem cell gives rise to:",
-"opts": [
-"Only red blood cells",
-"Only nerve cells",
-"All blood cells",
-"Muscle cells"
-],
-"ans": 2,
-"exp": "<b>Hematopoietic stem cell</b> → all blood cells in the body."
-},
-{
-"q": "For how long can stem cells divide?",
-"opts": [
-"Only once",
-"A few hours only",
-"Only during embryonic life",
-"Indefinite periods"
-],
-"ans": 3,
-"exp": "Stem cells can divide for <b>indefinite periods</b>."
-},
-{
-"q": "When transplanted to a damaged recipient, stem cells should:",
-"opts": [
-"Stay undifferentiated forever",
-"Differentiate into the appropriate cell types",
-"Become cancer cells",
-"Lose all their potency"
-],
-"ans": 1,
-"exp": "They should <b>differentiate into the appropriate cell types</b>."
-},
-{
-"q": "In the tissue engineering paradigm, the first step is:",
-"opts": [
-"Implanting the construct",
-"Harvesting (isolating) cells from the patient",
-"Culturing the construct",
-"Adding the scaffold to the patient"
-],
-"ans": 1,
-"exp": "The first step is <b>harvesting cells</b> from the patient, then expanding them."
-},
-{
-"q": "After the cells are seeded onto a scaffold, the cell-seeded scaffold is stimulated to develop a:",
-"opts": [
-"Stem cell line",
-"Growth factor",
-"Polymer scaffold",
-"Tissue equivalent"
-],
-"ans": 3,
-"exp": "Stimulation of the cell-seeded scaffold develops a <b>tissue equivalent</b>."
-},
-{
-"q": "What is the final step of the tissue engineering paradigm?",
-"opts": [
-"Implantation of the construct in vivo",
-"Harvesting the cells",
-"Expanding the cells",
-"Seeding the cells on a scaffold"
-],
-"ans": 0,
-"exp": "The construct is <b>implanted in vivo</b> (back into the patient)."
-},
-{
-"q": "Stem cells have not yet “decided” which adult cell type they will be. This describes which property?",
-"opts": [
-"Self-renewal",
-"Potency",
-"Unspecialized",
-"Regeneration"
-],
-"ans": 2,
-"exp": "<b>Unspecialized</b> cells have not committed to a specific adult cell type."
-},
-{
-"q": "A stem cell divides into two stem cells. Which property does this show?",
-"opts": [
-"Differentiation",
-"Potency",
-"Repair",
-"Self-renewal"
-],
-"ans": 3,
-"exp": "Producing more stem cells = <b>self-renewal</b>."
-}
+ {
+  "q": "Tissue engineering applies the principles of:",
+  "opts": [
+   "Chemistry and physics",
+   "Pharmacology and genetics",
+   "Biology and engineering",
+   "Anatomy and histology"
+  ],
+  "ans": 2,
+  "exp": "Tissue engineering = <b>biology and engineering</b> (with medicine)."
+ },
+ {
+  "q": "Tissue engineering is the manufacturing of body parts:",
+  "opts": [
+   "Inside the body (in vivo)",
+   "Only inside animals",
+   "Only inside the bone marrow",
+   "Outside the body (ex vivo)"
+  ],
+  "ans": 3,
+  "exp": "<b>Ex vivo</b> = outside the living body."
+ },
+ {
+  "q": "The aim of the substitutes developed by tissue engineering is to:",
+  "opts": [
+   "Remove damaged tissues without any replacement",
+   "Stop cell division in the damaged tissue",
+   "Replace stem cells with synthetic drugs",
+   "Restore, maintain or improve tissue function"
+  ],
+  "ans": 3,
+  "exp": "The substitutes <b>restore, maintain or improve</b> the function of tissues or a whole organ."
+ },
+ {
+  "q": "The tissue engineering triad consists of:",
+  "opts": [
+   "Cells, growth factors and scaffolds",
+   "Cells, antibiotics and metal implants",
+   "Scaffolds, enzymes and antibodies",
+   "Stem cells, blood and bone marrow"
+  ],
+  "ans": 0,
+  "exp": "Triad = <b>cells + growth factors + scaffolds</b>."
+ },
+ {
+  "q": "Which triad component forms the new tissue matrix?",
+  "opts": [
+   "Growth factors",
+   "Scaffolds",
+   "Culture medium",
+   "Cells"
+  ],
+  "ans": 3,
+  "exp": "<b>Cells</b> form the new tissue matrix."
+ },
+ {
+  "q": "The role of growth factors in the triad is to:",
+  "opts": [
+   "Act as the extracellular matrix for the cells",
+   "Promote and facilitate cell function",
+   "Form the new tissue matrix in the patient",
+   "Remove the cells from the scaffold after culture"
+  ],
+  "ans": 1,
+  "exp": "<b>Growth factors</b> promote and facilitate cell function."
+ },
+ {
+  "q": "Which component acts as an extracellular matrix allowing differentiation, proliferation and biosynthesis?",
+  "opts": [
+   "Scaffolds",
+   "Cells",
+   "Growth factors",
+   "Progenitor cells"
+  ],
+  "ans": 0,
+  "exp": "<b>Scaffolds</b> act as an extracellular matrix."
+ },
+ {
+  "q": "All of the following are components of the tissue engineering triad EXCEPT:",
+  "opts": [
+   "Cells",
+   "Antibodies",
+   "Growth factors",
+   "Scaffolds"
+  ],
+  "ans": 1,
+  "exp": "The triad is cells, growth factors and scaffolds. <b>Antibodies</b> are not part of it."
+ },
+ {
+  "q": "“Reestablishing lost or damaged tissue to retain continuity” describes:",
+  "opts": [
+   "Repair",
+   "Regeneration",
+   "Differentiation",
+   "Self-renewal"
+  ],
+  "ans": 0,
+  "exp": "<b>Repair</b> = retaining continuity only."
+ },
+ {
+  "q": "“Replacement of lost tissue with an exact copy” describes:",
+  "opts": [
+   "Repair",
+   "Regeneration",
+   "Potency",
+   "Scaffolding"
+  ],
+  "ans": 1,
+  "exp": "<b>Regeneration</b> = exact copy, morphology and function restored."
+ },
+ {
+  "q": "Which statement about regeneration is correct?",
+  "opts": [
+   "It restores both morphology and function",
+   "It only retains the continuity of the tissue",
+   "It never produces an exact copy of the tissue",
+   "It is exactly the same process as repair"
+  ],
+  "ans": 0,
+  "exp": "Regeneration restores <b>morphology and function</b>. Repair only retains continuity."
+ },
+ {
+  "q": "Regenerative medicine aims to:",
+  "opts": [
+   "Replace, engineer or regenerate tissues and organs",
+   "Treat infections using antibiotics and vaccines",
+   "Prevent the aging of all tissues in the body",
+   "Produce synthetic drugs for organ diseases"
+  ],
+  "ans": 0,
+  "exp": "<b>Regenerative medicine</b> = replace, engineer or regenerate to restore or establish normal function."
+ },
+ {
+  "q": "A stem cell is best defined as:",
+  "opts": [
+   "A specialized cell that can never divide again",
+   "A mature cell found only in blood vessels",
+   "An undifferentiated cell that divides and renews itself",
+   "A cell with a fixed function in one tissue"
+  ],
+  "ans": 2,
+  "exp": "<b>Stem cell</b> = undifferentiated, self-renewing, gives specialized cells."
+ },
+ {
+  "q": "Which of the following is NOT a feature of stem cells?",
+  "opts": [
+   "It is not yet specialized",
+   "It has its own specific function",
+   "It can divide for indefinite periods",
+   "It can give more than one cell type"
+  ],
+  "ans": 1,
+  "exp": "Stem cells have <b>no function of their own</b> and no tissue-specific structures."
+ },
+ {
+  "q": "The three unique properties of stem cells are:",
+  "opts": [
+   "Specialized, self-renewal, apoptosis",
+   "Unspecialized, self-renewal, potency",
+   "Unspecialized, necrosis, potency",
+   "Self-renewal, scaffolding, repair"
+  ],
+  "ans": 1,
+  "exp": "Remember <b>U·S·P</b>."
+ },
+ {
+  "q": "Dividing for long periods while preserving the undifferentiated state is called:",
+  "opts": [
+   "Potency",
+   "Differentiation",
+   "Self-renewal",
+   "Regeneration"
+  ],
+  "ans": 2,
+  "exp": "<b>Self-renewal</b> keeps the cell undifferentiated while it divides."
+ },
+ {
+  "q": "The ability to give specific mature cell types that build special tissues is called:",
+  "opts": [
+   "Self-renewal",
+   "Proliferation",
+   "Repair",
+   "Potency"
+  ],
+  "ans": 3,
+  "exp": "<b>Potency</b> = differentiation potential."
+ },
+ {
+  "q": "The process in which a less specialized cell becomes more specialized is:",
+  "opts": [
+   "Cell differentiation",
+   "Self-renewal",
+   "Cell proliferation",
+   "Tissue repair"
+  ],
+  "ans": 0,
+  "exp": "<b>Differentiation</b> = more specialized form and function."
+ },
+ {
+  "q": "The hematopoietic stem cell gives rise to:",
+  "opts": [
+   "Only red blood cells",
+   "All blood cells",
+   "Only nerve cells",
+   "Muscle and bone cells"
+  ],
+  "ans": 1,
+  "exp": "<b>Hematopoietic stem cell</b> → all blood cells in the body."
+ },
+ {
+  "q": "Stem cells have the ability to divide for:",
+  "opts": [
+   "Only once",
+   "A few hours only",
+   "Only during embryonic life",
+   "Indefinite periods"
+  ],
+  "ans": 3,
+  "exp": "Stem cells divide for <b>indefinite periods</b>."
+ },
+ {
+  "q": "When transplanted to a damaged recipient, stem cells should:",
+  "opts": [
+   "Remain undifferentiated in the damaged tissue",
+   "Become cancer cells in the damaged tissue",
+   "Differentiate into the appropriate cell types",
+   "Lose all their potency after transplantation"
+  ],
+  "ans": 2,
+  "exp": "They should <b>differentiate into the appropriate cell types</b>."
+ },
+ {
+  "q": "In the tissue engineering paradigm, the first step is:",
+  "opts": [
+   "Implanting the construct in vivo",
+   "Culturing the construct",
+   "Adding the scaffold to the patient",
+   "Harvesting cells from the patient"
+  ],
+  "ans": 3,
+  "exp": "First step = <b>harvest cells from the patient</b>."
+ },
+ {
+  "q": "After cells are seeded on a scaffold, the cell-seeded scaffold is stimulated to develop a:",
+  "opts": [
+   "Stem cell line",
+   "Growth factor",
+   "Polymer scaffold",
+   "Tissue equivalent"
+  ],
+  "ans": 3,
+  "exp": "Signalling develops a <b>tissue equivalent</b>."
+ },
+ {
+  "q": "The final step of the tissue engineering paradigm is:",
+  "opts": [
+   "Harvesting the cells from the patient",
+   "Expanding the cells in culture",
+   "Implantation of the construct in vivo",
+   "Seeding the cells on a scaffold"
+  ],
+  "ans": 2,
+  "exp": "The construct is <b>implanted in vivo</b>, back into the patient."
+ },
+ {
+  "q": "Stem cells have not yet “decided” which adult cell type they will be. This is the property of being:",
+  "opts": [
+   "Self-renewing",
+   "Potent",
+   "Unspecialized",
+   "Regenerative"
+  ],
+  "ans": 2,
+  "exp": "<b>Unspecialized</b> = not yet committed to an adult cell type."
+ }
 ]
 };
 
@@ -1540,7 +1367,7 @@ function buildPrintArea(lecId){
       ${get('content')}
     </div>
     <div class="print-section">
-      <h2 class="print-h2">⭐ Key Terms</h2>
+      <h2 class="print-h2">⭐ Key Points</h2>
       ${get('keypoints')}
     </div>
     <div class="print-section">
